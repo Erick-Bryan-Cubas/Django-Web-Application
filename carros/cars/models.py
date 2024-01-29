@@ -1,0 +1,26 @@
+from django.db import models
+
+class Car(models.Model):
+    """
+    Representa um modelo de carro no sistema.
+
+    Atributos:
+        id (AutoField): Identificador único do carro (chave primária).
+        model (CharField): Modelo do carro (até 200 caracteres).
+        brand (CharField): Marca do carro (até 200 caracteres).
+        factory_year (IntegerField): Ano de fabricação do carro (opcional).
+        model_year (IntegerField): Ano do modelo do carro (opcional).
+        plate(CharField): Plava do veículo (opcional).
+        value (FloatField): Valor do carro (opcional).
+
+    Observações:
+        - Os campos factory_year, model_year e value são opcionais, podendo ser nulos.
+    """
+    id = models.AutoField(primary_key=True)
+    model = models.CharField(max_length=200)
+    brand = models.CharField(max_length=200)
+    factory_year = models.IntegerField(blank=True, null=True)
+    model_year = models.IntegerField(blank=True, null=True)
+    plate = models.CharField(max_length=10, blank=True, null=True)
+    value = models.FloatField(blank=True, null=True)
+    photo = models.ImageField(upload_to='cars/',blank=True, null=True)
