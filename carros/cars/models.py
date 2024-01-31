@@ -1,5 +1,13 @@
 from django.db import models
 
+
+class Brand(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=200)
+ 
+    def __str__(self):
+        return self.name
+    
 class Car(models.Model):
     """
     Representa um modelo de carro no sistema.
@@ -7,7 +15,7 @@ class Car(models.Model):
     Atributos:
         id (AutoField): Identificador único do carro (chave primária).
         model (CharField): Modelo do carro (até 200 caracteres).
-        brand (CharField): Marca do carro (até 200 caracteres).
+        brand (ForeignKey): Marca do carro, chave estrangeira da tabela Brand
         factory_year (IntegerField): Ano de fabricação do carro (opcional).
         model_year (IntegerField): Ano do modelo do carro (opcional).
         plate(CharField): Plava do veículo (opcional).
@@ -18,7 +26,7 @@ class Car(models.Model):
     """
     id = models.AutoField(primary_key=True)
     model = models.CharField(max_length=200)
-    brand = models.CharField(max_length=200)
+    brand = models.ForeignKey(Brand, on_delete=models.PROTECT, related_name='car_brand')
     factory_year = models.IntegerField(blank=True, null=True)
     model_year = models.IntegerField(blank=True, null=True)
     plate = models.CharField(max_length=10, blank=True, null=True)
