@@ -4,7 +4,25 @@
     <form method="post">
         {% csrf_token %}
 
-        {{ user_form.as_p }}
+        <div class="form-group">
+            {{ user_form.username.errors }} <!--Mensagem de erro ao usuário -->
+            <label>Usuário: </label>
+            {{ user_form.username }}
+        </div><br>
+        <div class="form-group">
+            {{ user_form.passwod1.errors }}
+            <label>Senha: </label>
+            {{ user_form.password1 }}
+        </div><br>
+        <div class="form-group">
+            {{ user_form.passwod2.errors }}
+            <label>Confirmação de senha: </label>
+            {{ user_form.password2 }}
+        </div><br>
+        <div class="form-group">
+        <input type="submit" value="Cadastrar">
+        </div>
+
     </form>
 
 {% endblock %}
