@@ -6,7 +6,7 @@
         {% csrf_token %} <!--middle para segurança da informação -->
        <!-- {{ new_car_form.as_p }} as_p formatação em paragrafo-->
         <table>
-            {{ new_car_form.as_table}} <!-- as_table formatação em tabela -->
+            {{ form.as_table}} <!-- as_table formatação em tabela -->
         </table>
 
         <input type="submit" value="Cadastrar" class="btn btn-primary">
