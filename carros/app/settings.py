@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+import configparser
+
+userprofile = os.environ['USERPROFILE']
+credentials_path = os.path.join(userprofile, 'Área de Trabalho\\Projetos\\DjangoMaster\\')
+config = configparser.ConfigParser()
+config.read(credentials_path + 'PostgreSQL.ini')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,8 +83,12 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'carros',
+        'USER': 'postgres',
+        'PASSWORD': config['POSTGRESQL']['PASSWORD'],
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
