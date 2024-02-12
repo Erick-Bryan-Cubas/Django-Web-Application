@@ -4,3 +4,5 @@ APIDjangoMaster.ini
 PostgreSQL.ini
 django-master-key.pem
 /home/ubuntu/DjangoMaster/carros/venv
+/home/ubuntu/DjangoMaster/PostgreSQL.ini
+/home/ubuntu/DjangoMaster/APIDjangoMaster.ini
