@@ -13,7 +13,7 @@ import os
 from pathlib import Path
 import configparser
 
-userprofile = os.environ['USERPROFILE']
+userprofile = os.environ.get('USERPROFILE') or os.environ.get('HOME')
 credentials_path = os.path.join(userprofile, 'Área de Trabalho\\Projetos\\DjangoMaster\\')
 config = configparser.ConfigParser()
 config.read(credentials_path + 'PostgreSQL.ini')
