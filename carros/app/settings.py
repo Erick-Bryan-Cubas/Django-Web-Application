@@ -13,12 +13,9 @@ import os
 from pathlib import Path
 import configparser
 
-userprofile = Path(os.environ.get('USERPROFILE') or os.environ.get('HOME'))
-config_filename = 'PostgreSQL.ini'
-credentials_path = userprofile / 'DjangoMaster' / config_filename
-
+config_file_path = Path('/var/www/DjangoMaster') / 'PostgreSQL.ini'
 config = configparser.ConfigParser()
-config.read(str(credentials_path))
+config.read(str(config_file_path))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

@@ -2,10 +2,9 @@ import openai
 import configparser
 import os 
 
-userprofile = os.environ.get('USERPROFILE') or os.environ.get('HOME')
-credentials_path = os.path.join(userprofile, 'Área de Trabalho\\Projetos\\DjangoMaster\\')
+config_file_path = Path('/var/www/DjangoMaster') / 'APIDjangoMaster.ini'
 config = configparser.ConfigParser()
-config.read(credentials_path + 'APIDjangoMaster.ini')
+config.read(str(config_file_path))
 
 def get_car_ai_bio(model, brand, year):
     prompt = f'''
