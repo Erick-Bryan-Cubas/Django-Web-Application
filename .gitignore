@@ -8,3 +8,4 @@ django-master-key.pem
 /home/ubuntu/DjangoMaster/APIDjangoMaster.ini
 /var/www/DjangoMaster/PostgreSQL.ini
 /var/www/DjangoMaster/APIDjangoMaster.ini
+/var/www/DjangoMaster/carros/venv
