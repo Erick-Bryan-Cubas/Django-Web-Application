@@ -3,3 +3,4 @@ db.sqlite3
 APIDjangoMaster.ini
 PostgreSQL.ini
 django-master-key.pem
+/home/ubuntu/DjangoMaster/carros/venv
