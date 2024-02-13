@@ -50,35 +50,31 @@
     }
 
     form {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 30px;
-    }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      text-align: center;
+  }
 
-    input[type="text"], button[type="submit"] {
-        padding: 12px 15px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: 2px solid #dee2e6; /* Light grey border */
-    }
+  input[type="text"], button[type="submit"] {
+      padding: 12px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 2px solid #dee2e6; /* Light grey border */
+      margin: 0 auto; /* Centralizar a barra de pesquisa */
+  }
 
-    input[type="text"] {
-        flex-grow: 1;
-        margin-right: 10px;
-    }
+  input[type="text"] {
+      width: 100%; /* Ajustar a largura do input para preencher o form */
+      max-width: 300px; /* Máximo de largura da barra de pesquisa */
+      margin-right: 10px;
+  }
 
-    input[type="text"]:focus, button[type="submit"]:hover {
-        outline: none;
-        border-color: #007BFF;
-    }
+  button[type="submit"] {
+      padding: 12px 20px; /* Ajustar o padding para alinhar com o input */
+  }
 
-    button[type="submit"] {
-        background-color: #007BFF;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-    }
 
     @media (max-width: 768px) {
       .car-grid {
